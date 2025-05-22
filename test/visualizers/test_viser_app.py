@@ -4,7 +4,7 @@ from trimesh.creation import box
 from viser import ViserServer
 
 # Import the functions and classes from the module under test.
-from jacta.visualizers.mujoco.model import (
+from judo.visualizers.model import (
     ViserMjModel,
     add_box,
     add_capsule,
