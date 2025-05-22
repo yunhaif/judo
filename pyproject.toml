@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "judo"
+version = "0.1.0"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    {name = "The AI Institute"},
+]
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "cma==3.4.0",
+    "dacite==1.8.1",
+    "matplotlib==3.6.3",
+    "mujoco==3.3.0", # WARNING: this version needs to match the 'bazelized' cpp libraries in @//deps
+    "mujoco-mjx==3.3.0",
+    "numpy==1.26.4",
+    "onnxruntime==1.19.0",
+    "plotly==5.12.0",
+    "python-benedict==0.33.2",
+    "pyyaml==6.0.1",
+    "scipy==1.14.0",
+    "torch>=2.3.0",
+    "torchrl>=0.4.0",
+    "tqdm==4.64.1",
+    "typing-extensions==4.11.0",
+    "tyro==0.8.4",
+    "viser",
+    "flake8-docstrings==1.7.0", # /!\ all the dependencies below could potentially be removed /!\
+    "google-cloud-storage==2.15.0",
+    "flask==3.0.2",
+    "importlib_metadata==6.11.0",
+    "ipdb==0.13.13",
+    "ipykernel==6.29.4",
+    "ipython>=5",  # meshcat: https://github.com/meshcat-dev/meshcat-python/blob/785bc9d5ba6f8a8bb79ee8b25f523805946c1fbd/setup.py#L20
+    "lark==1.1.5",
+    "pillow>=7.0.0",   # meshcat
+    "pip>=25.0",
+    "pyngrok>=4.1.6",  # meshcat
+    "pyzmq>=17.0.0",  # meshcat
+    "setuptools>=61.0",
+    "tensordict>=0.4.0",
+    "toposort>=1.10",
+    "tornado>=4.0.0",  # meshcat
+    "u-msgpack-python>=2.4.1",  # meshcat
+    "meshcat",
+    "drake==1.27.0",
+]
+
+[project.scripts]
+viser-app = "judo.visualizers.viser_app.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.4",
+  "pytest-cov>=6.0.0",
+  "pytest-xdist>=3.6.1",
+]
+
+[tool.coverage.run]
+source = ["./judo"]
+
+[tool.ruff]
+lint.select = [
+    "E",  # pycodestyle errors.
+    "F",  # Pyflakes rules.
+    "PLC",  # Pylint convention warnings.
+    "PLE",  # Pylint errors.
+    "PLR",  # Pylint refactor recommendations.
+    "PLW",  # Pylint warnings.
+    "I", # Import sorting.
+]
+lint.ignore = [
+    "E741", # Ambiguous variable name. (l, O, or I)
+    "E501",  # Line too long.
+    "E721",  # Do not compare types, use `isinstance()`.
+    "F722",  # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "F821",  # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "PLR2004",  # Magic value used in comparison.
+    "PLR0915",  # Too many statements.
+    "PLR0913",  # Too many arguments.
+    "PLC0414",  # Import alias does not rename variable. (this is used for exporting names)
+    "PLC1901",  # Use falsey strings.
+    "PLR5501",  # Use `elif` instead of `else if`.
+    "PLR0911",  # Too many return statements.
+    "PLR0912",  # Too many branches.
+    "PLW0603",  # Globa statement updates are discouraged.
+    "PLW2901",  # For loop variable overwritten.
+    "PLW0642",  # Reassigned self in instance method.
+]
