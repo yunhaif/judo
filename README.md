@@ -1,6 +1,6 @@
 # judo
 [![build](https://github.com/bdaiinstitute/judo/actions/workflows/build.yml/badge.svg)](https://github.com/bdaiinstitute/judo/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/bdaiinstitute/judo/graph/badge.svg?token=7A0OJ37JRF)](https://codecov.io/gh/bdaiinstitute/judo)
+[![codecov](https://codecov.io/gh/bdaiinstitute/judo/graph/badge.svg?token=3GGYCZM2Y2)](https://codecov.io/gh/bdaiinstitute/judo)
 [![docs](https://github.com/bdaiinstitute/judo/actions/workflows/docs.yml/badge.svg)](https://github.com/bdaiinstitute/judo/actions/workflows/docs.yml)
 [![Static Badge](https://img.shields.io/badge/documentation-latest-8A2BE2)](https://bdaiinstitute.github.io/judo)
 
