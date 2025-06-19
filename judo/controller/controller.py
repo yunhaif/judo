@@ -139,7 +139,7 @@ class Controller:
         i = 0
         while i < self.max_opt_iters and not self.optimizer.stop_cond():
             # sample controls and clamp to action bounds
-            self.candidate_knots = self.optimizer.sample_control_knots(nominal_knots[None])
+            self.candidate_knots = self.optimizer.sample_control_knots(nominal_knots)
             self.candidate_knots = np.clip(
                 self.candidate_knots,
                 self.task.actuator_ctrlrange[:, 0],
