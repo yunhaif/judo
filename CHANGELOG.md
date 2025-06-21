@@ -13,11 +13,13 @@ This release contains bugfixes prior to RSS 2025.
 * Update model loading so that textures appear correctly in the visualizer (@pculbertson, #32)
 * Fix bug where leap cube task encountered division by 0 in axis normalization (@alberthli, #34)
 * Fixed bug where changing tasks added accumulating grey lines to the GUI (@slecleach, #44)
+* Fixed bug in FR3 task where the MJC distance sensors were flakily not reporting when cube was being lifted (@alberthli, #49).
 
 ## Documentation
 * Changelog file to track changes in the repository (@alberthli, #43)
 * Added contributor guidelines to the README (@alberthli, #43)
 * Added information about the tasks in a task README (@alberthli, #43)
+* Updated author order in the README citation (@pculbertson, #50)
 
 ## Dev
 * Bump prefix-dev/setup-pixi from 0.8.8 to 0.8.10 (#18)
